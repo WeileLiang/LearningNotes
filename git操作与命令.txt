@@ -1,0 +1,74 @@
+git config --global user.name "gzliangwiele"
+git config --global user.email "gzliangweile@corp.netease.com"
+
+1.选择某个项目（文件夹）作为版本库（仓库）
+cd /d/AndroidStudioSpace/LWLTest
+
+2.把该目录变成Git仓库
+git init
+
+3.添加/修改文件（把工作区的内容提交到暂存区）
+git add readme.txt
+git add . (把该目录下所有修改的文件都提交)
+
+4.把暂存区的内容提交到版本库，形成一个新版本
+git commit -m "add something"
+
+5.git status 版本库当前状态
+
+6.添加远程库
+git remote add origin git@github.com:weileliang/LWLTest.git
+git push -u origin master
+
+7.克隆远程库
+先进入某个文件夹
+cd C/Users/gzliangweile/Desktop/LWL
+再使用命令拷贝
+git clone git@github.com:weileliang/Tata.git
+
+8.查看版本库的所有分支
+git branch
+
+9.创建新分支
+git branch dev
+
+10. 切换分支
+git checkout dev
+
+11. 使用git checkout命令加上-b参数表示创建并切换
+git checkout -b dev
+
+12. merge分支
+先进入到某个分支，例如master分支
+git branch master
+然后把指定分支merge到当前分支，即master
+git merge dev
+
+13. 删除分支
+git branch -d dev
+
+14. 推送分支:把当前分支（master/dev）推送到远程仓库origin
+如果远程库没有dev分支，会远程自动创建dev分支。
+git push origin master/dev
+
+15. 在本地创建分支并与远程分支建立联系
+例如clone到本地的项目只有master分支，远程仓库存在别的小伙伴创建的dev分支，现在需要在本地登录上该分支
+git checkout -b dev origin/dev
+
+16. push或者pull之前需要先把本地的分支与远程分支建立连接
+即把本地dev分支和远程的dev分支建立链接
+git branch --set-upstream dev origin/dev
+//这句好像是新的？
+git branch --track dev origin/dev
+
+17.push之前需要先把别人最新的提交拉到自己的本地仓库
+git pull
+
+18git提交步骤：
+现在本地分支pull master
+改好了merge到本地master,在本地master push到远程分支
+
+
+
+
+
